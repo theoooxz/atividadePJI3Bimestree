@@ -1,0 +1,66 @@
+:root {
+    --primary-purple: #7c3aed;
+    --primary-dark: #5b21b6;
+    --primary-light: #a78bfa;
+    --secondary-purple: #c084fc;
+    --accent-purple: #ddd6fe;
+    --bg-gradient-start: #1e1b4b;
+    --bg-gradient-end: #312e81;
+    --surface-dark: #2d2a5e;
+    --surface-light: #f5f3ff;
+    --text-primary: #1f2937;
+    --text-light: #6b7280;
+    --text-white: #ffffff;
+    --success-bg: #dcfce7;
+    --success-text: #166534;
+    --error-bg: #fee2e2;
+    --error-text: #991b1b;
+    --border-color: #e5e7eb;
+    --shadow-sm: 0 1px 3px rgba(124, 58, 237, 0.12);
+    --shadow-md: 0 4px 6px rgba(124, 58, 237, 0.15);
+    --shadow-lg: 0 10px 25px rgba(124, 58, 237, 0.2);
+}
+
+* { margin:0; padding:0; box-sizing:border-box }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+  min-height:100vh; padding:20px; color:var(--text-primary);
+}
+
+header {
+  background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-dark) 100%);
+  padding:30px 40px; border-radius:20px; box-shadow:var(--shadow-lg); margin-bottom:30px;
+}
+
+header h1 { color:var(--text-white); font-size:2.2em; font-weight:700; margin-bottom:15px }
+
+nav { display:flex; gap:15px; flex-wrap:wrap }
+nav a { color:var(--text-white); text-decoration:none; padding:10px 20px; background: rgba(255,255,255,0.15); border-radius:10px; font-weight:600 }
+nav a:hover { background: rgba(255,255,255,0.25) }
+
+main { max-width:1200px; margin:0 auto; background:var(--text-white); padding:40px; border-radius:20px; box-shadow:var(--shadow-lg) }
+section { margin-bottom:30px }
+section h2 { color:var(--primary-purple); font-size:1.8em; margin-bottom:15px }
+section p { line-height:1.8; color:var(--text-light); font-size:1.05em }
+
+form { margin-top:25px; display:grid; grid-template-columns:1fr; gap:20px; background:var(--surface-light); padding:30px; border-radius:15px; border:2px solid var(--accent-purple) }
+label { display:flex; flex-direction:column; font-weight:600; color:var(--primary-dark); gap:8px }
+input, textarea, select { padding:12px 16px; border:2px solid var(--border-color); border-radius:10px; font-size:1em; font-family: inherit }
+/* Force uniform font in form controls */
+form, form label, input, textarea, select, button { font-family: inherit; }
+textarea { min-height:100px }
+button { padding:14px 28px; border-radius:10px; border:none; background:linear-gradient(135deg,var(--primary-purple) 0%, var(--primary-dark) 100%); color:var(--text-white); font-weight:600; cursor:pointer }
+button.delete { background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); }
+
+.message { padding:15px 20px; border-radius:10px; margin:20px 0; font-weight:500 }
+.message.error { background:var(--error-bg); color:var(--error-text); border-left:4px solid var(--error-text) }
+.message.success { background:var(--success-bg); color:var(--success-text); border-left:4px solid var(--success-text) }
+
+.table { width:100%; border-collapse:separate; border-spacing:0; margin-top:25px; background:var(--text-white); border-radius:15px; overflow:hidden }
+.table thead { background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-dark) 100%); }
+.table th { padding:16px; text-align:left; color:var(--text-white); font-weight:600 }
+.table td { padding:14px 16px; border-bottom:1px solid var(--border-color); color:var(--text-primary) }
+
+@media (max-width:768px){ body{padding:10px} header{padding:20px 25px} main{padding:25px 20px} }
